@@ -86,4 +86,5 @@ class Car(pygame.sprite.Sprite):
         self.rect.centerx += self.x_velo
         self.rect.centery += self.y_velo
         self.in_bounds()
+    
 
