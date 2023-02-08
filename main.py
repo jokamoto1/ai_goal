@@ -61,7 +61,7 @@ def test_best_network(config_file):
                                 neat.DefaultSpeciesSet, neat.DefaultStagnation,
                                 config_file)
 
-    with open("v2.pickle", "rb") as f:
+    with open("v4.pickle", "rb") as f:
         winner = pickle.load(f)
     # winner_net = neat.nn.FeedForwardNetwork.create(winner, config)
     game = Game(screen,clock)
