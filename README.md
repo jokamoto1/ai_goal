@@ -5,6 +5,5 @@ A single player game where the user can go up against a nerual network trained a
     pip install pygame
 
 
-
-https://user-images.githubusercontent.com/87504558/217406473-b80a110e-ade0-4670-acd7-7640af212312.mov
+![showcase_ai_goal](https://user-images.githubusercontent.com/87504558/217408171-4ae5a4e2-bc44-4283-a474-8cbc1c98df39.gif)
 Player(red) vs Nerual Network(blue)
