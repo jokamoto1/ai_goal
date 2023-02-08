@@ -78,7 +78,7 @@ def test_best_network_vs_itself(config_file):
     game.ai_vs_ai(winner,winner, config)   
 
 # 
-# test_best_network("config-feedforward.txt")
+test_best_network("config-feedforward.txt")
 # test_best_network_vs_itself("config-feedforward.txt")
 # run("config-feedforward.txt")
 # 
