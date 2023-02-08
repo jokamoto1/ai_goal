@@ -28,16 +28,16 @@ class Ball(pygame.sprite.Sprite):
             self.y_velo +=.1/2
     def in_bounds(self):
         if self.rect.left <= 0:
-            self.rect.left = 1
+            self.rect.left = 40
             self.x_velo *= -1
         if self.rect.right >= 500:
-            self.rect.right = 499
+            self.rect.right = 460
             self.x_velo *= -1
         if self.rect.top <= 0:
-            self.rect.top = 1
+            self.rect.top = 40
             self.y_velo *= -1
         if self.rect.bottom >= 600:
-            self.rect.bottom = 599
+            self.rect.bottom = 560
             self.y_velo *= -1
 
     def move(self):
@@ -65,7 +65,7 @@ class Ball(pygame.sprite.Sprite):
         self.x_velo = 0
 
     def update(self):
-        self.drag()
+        # self.drag()
         self.move()
         # self.animate_direction()
         self.in_bounds()

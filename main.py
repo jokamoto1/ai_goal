@@ -34,10 +34,10 @@ def run(config_file):
     p.add_reporter(neat.StdOutReporter(True))
     stats = neat.StatisticsReporter()
     p.add_reporter(stats)
-    p.add_reporter(neat.Checkpointer(20))
+    # p.add_reporter(neat.Checkpointer(20))
 
     # Run for up to 50 generations.
-    winner = p.run(eval_genomes, 50)
+    winner = p.run(eval_genomes, 100)
     with open("best.pickle", "wb") as f:
         pickle.dump(winner, f)
 
@@ -61,15 +61,26 @@ def test_best_network(config_file):
                                 neat.DefaultSpeciesSet, neat.DefaultStagnation,
                                 config_file)
 
+    with open("v2.pickle", "rb") as f:
+        winner = pickle.load(f)
+    # winner_net = neat.nn.FeedForwardNetwork.create(winner, config)
+    game = Game(screen,clock)
+    game.fight_ai(winner, config)    
+def test_best_network_vs_itself(config_file):
+    config = neat.config.Config(neat.DefaultGenome, neat.DefaultReproduction,
+                                neat.DefaultSpeciesSet, neat.DefaultStagnation,
+                                config_file)
+
     with open("best.pickle", "rb") as f:
         winner = pickle.load(f)
     # winner_net = neat.nn.FeedForwardNetwork.create(winner, config)
     game = Game(screen,clock)
-    game.fight_ai(winner, config)      
+    game.ai_vs_ai(winner,winner, config)   
 
-
-test_best_network("config-feedforward.txt")
+# 
+# test_best_network("config-feedforward.txt")
+# test_best_network_vs_itself("config-feedforward.txt")
 # run("config-feedforward.txt")
-
+# 
 
 
